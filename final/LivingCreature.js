@@ -1,4 +1,4 @@
-class Grass {
+class LivingCreature {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -28,27 +28,4 @@ class Grass {
         }
         return found;
     }
-
-    mul() {
-        this.multiply++
-        let emptyCelss = this.chooseCell(0)
-        let newCell = random(emptyCelss)
-        if (this.multiply >= 8 && newCell) {
-            let newX = newCell[0]
-            let newY = newCell[1]
-            matrix[newY][newX] = 1
-            let newGr = new Grass(newX, newY)
-            grassArr.push(newGr)
-            this.multiply = 0
-        }
-    }
-
 }
-
-
-
-
-
-
-
-
