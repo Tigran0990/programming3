@@ -1,4 +1,7 @@
-class Infected extends LivingCreature {
+let LivingCreature = require('./LivingCreature')
+
+
+module.exports=class Infected extends LivingCreature {
     constructor(x, y) {
         super(x,y)
         this.energy = 10;
