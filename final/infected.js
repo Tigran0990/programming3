@@ -14,7 +14,7 @@ module.exports=class Infected extends LivingCreature {
 
     chooseCell(character) {
         this.getNewCoordinates()
-        return super.choosel(character);
+        return super.chooseCell(character);
     }
 
     

@@ -14,7 +14,7 @@ module.exports=class Hunter extends LivingCreature {
 
     chooseCell(character) {
         this.getNewCoordinates()
-        return super.choosel(character);
+        return super.chooseCell(character);
     }
 
     mul() {
@@ -33,7 +33,7 @@ module.exports=class Hunter extends LivingCreature {
     move() {
         this.energy--
         let emptyCelss = this.chooseCell(0)
-        let newCell = random(emptyCelss)
+        let newCell = emptyCelss[Math.floor(Math.random() * emptyCelss.length)]
         if (newCell && this.energy >= 0) {
             let newX = newCell[0]
             let newY = newCell[1]
@@ -48,9 +48,9 @@ module.exports=class Hunter extends LivingCreature {
 
     eat() {
         let emptyCelss = this.chooseCell(2)
-        let emtptyCelss1 = this.chooseCell(3)
-        let newCell = random(emptyCelss)
-        let newCell1 = random(emtptyCelss1)
+        let emptyCelss1 = this.chooseCell(3)
+        let newCell = emptyCelss[Math.floor(Math.random() * emptyCelss.length)]
+        let newCell1 = emptyCelss1[Math.floor(Math.random() * emptyCelss1.length)]
         if (newCell) {
             this.energy++
             let newX = newCell[0]

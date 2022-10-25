@@ -14,7 +14,8 @@ module.exports = class Virus extends LivingCreature {
 
     chooseCell(character) {
         this.getNewCoordinates()
-        return super.choosel(character);
+    
+        return super.chooseCell(character);
 
     }
 
@@ -32,9 +33,9 @@ module.exports = class Virus extends LivingCreature {
     move() {
         this.energy--
         let emptyCelss = this.chooseCell(0)
-        let newCell = random(emptyCelss)
+        let newCell = emptyCelss[Math.floor(Math.random() * emptyCelss.length )]
         let emptyCelss1 = this.chooseCell(0)
-        let newCell1 = random(emptyCelss1)
+        let newCell1 = emptyCelss1[Math.floor(Math.random() * emptyCelss1.length )]
         if (newCell && this.energy >= 0) {
             let newX = newCell[0]
             let newY = newCell[1]
@@ -51,9 +52,9 @@ module.exports = class Virus extends LivingCreature {
 
 eat() {
     let emptyCelss = this.chooseCell(2)
-    let emtptyCelss1 = this.chooseCell(3)
+    let emptyCelss1 = this.chooseCell(3)
     let newCell = emptyCelss[Math.floor(Math.random() * emptyCelss.length )]
-    let newCell1 = emtptyCelss1[Math.floor(Math.random() * emtptyCelss1.length )]
+    let newCell1 = emptyCelss1[Math.floor(Math.random() * emptyCelss1.length )]
 
 
     if (newCell) {
@@ -109,7 +110,7 @@ die() {
             break;
         }
     }
-}0
+}
 }
 
 

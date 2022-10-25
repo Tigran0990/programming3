@@ -14,7 +14,7 @@ module.exports=class GrassEater extends LivingCreature {
 
     chooseCell(character) {
         this.getNewCoordinates()
-       return super.choosel(character);
+       return super.chooseCell(character);
     }
     mul() {
         let emptyCelss = this.chooseCell(0)
@@ -32,7 +32,7 @@ module.exports=class GrassEater extends LivingCreature {
     move() {
         this.energy--
         let emptyCelss = this.chooseCell(0)
-        let newCell = random(emptyCelss)
+        let newCell = emptyCelss[Math.floor(Math.random() *emptyCelss. length )]
         if (newCell && this.energy >= 0) {
             let newX = newCell[0]
             let newY = newCell[1]
@@ -47,7 +47,7 @@ module.exports=class GrassEater extends LivingCreature {
 
     eat() {
         let emptyCelss = this.chooseCell(1)
-        let newCell = random(emptyCelss)
+        let newCell = emptyCelss[Math.floor(Math.random() * emptyCelss.length)]
         if (newCell) {
             this.energy++
             let newX = newCell[0]
