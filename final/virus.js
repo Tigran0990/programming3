@@ -4,7 +4,7 @@ module.exports = class Virus extends LivingCreature {
 
     constructor(x, y) {
         super(x, y)
-        this.energy = 10;
+        this.energy = 15;
         this.directions = [];
 
     }

@@ -1,8 +1,8 @@
 var socket = io()
 
 
+var side = 10
 function setup() {
-   let side = 10
     createCanvas(60 * side, 60 * side );
     
 

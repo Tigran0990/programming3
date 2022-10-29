@@ -1,15 +1,19 @@
+
+
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var fs = require("fs");
+
 app.use(express.static("."));
+
 app.get('/', function (req, res) {
     res.redirect('index.html');
 });
-server.listen(3000);
-
-var fs = require("fs");
-
+server.listen(3000,()=>{
+    console.log("server run");
+});
 
 function matrixGenerate(matLength, gr, grEat, pr, Hunter, virus, infected) {
     let matrix = []
@@ -145,7 +149,7 @@ function game() {
     for (let i = 0; i < VirusArr.length; i++) {
         VirusArr[i].eat()
     }
-    console.log(InfectedArr);
+    // console.log(InfectedArr);
     for (let i = 0; i < InfectedArr.length; i++) {
         InfectedArr[i].move()
     }
