@@ -15,33 +15,42 @@ function nkarel(matrix) {
 for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
 
-            if (matrix[y][x] == 1) {
+            if (obj == 1){
+                if(weath == "summer") {
                 fill("green");
-            } else if (matrix[y][x] == 0) {
-                fill("#acacac");
-            } else if (matrix[y][x] == 2) {
+            }else if (weath == "autumn") {
                 fill("yellow");
+            }else if (weath == "winter") {
+                fill("white");
+            }else if (weath == "spring") {
+                fill("orange");
             }
-            else if (matrix[y][x] == 3) {
-                fill("red")
+        }else if (obj == 2) {
+                fill("yellow");
+            }else if (obj == 0){
+                fill("grey")
             }
-            else if (matrix[y][x] == 4) {
-                fill("blue")
-
+            else if (obj == 3) {
+                fill("purple")
+                
             }
-            else if (matrix[y][x] == 5) {
-                fill("black")
-            }
-            else if (matrix[y][x] == 6) {
-                fill("orange")
-
-            }
-
-
             rect(x * side, y * side, side, side);
         }
     }
-
-
 }
-socket.on("send matrix", nkarel )
+
+        socket.on('send matrix', nkarel)
+ 
+
+        function killInfected() {
+            socket.emit("kill Infected")
+        }
+        function spawnGrass() {
+            socket.emit("add Grass")
+        }
+        function spawnGrassEater() {
+            socket.emit("add grassEater")
+        }
+        function spawnHunter() {
+            socket.emit("add hunter")
+        }
