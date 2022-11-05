@@ -4,20 +4,11 @@ module.exports = class Virus extends LivingCreature {
 
     constructor(x, y) {
         super(x, y)
-        this.energy = 15;
+        this.energy = 25;
         this.directions = [];
 
     }
-    getNewCoordinates() {
-
-    }
-
-    chooseCell(character) {
-        this.getNewCoordinates()
-    
-        return super.chooseCell(character);
-
-    }
+   
 
     mul() {
         let emptyCelss = this.chooseCell(0)
@@ -46,6 +37,7 @@ module.exports = class Virus extends LivingCreature {
         } else {
             this.die()
         }
+        
     }
     
 

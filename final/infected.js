@@ -4,19 +4,11 @@ let LivingCreature = require('./LivingCreature')
 module.exports=class Infected extends LivingCreature {
     constructor(x, y) {
         super(x,y)
-        this.energy = 15;
+        this.energy = 25;
         this.directions = [];
 
     }
-    getNewCoordinates() {
-        
-    }
-
-    chooseCell(character) {
-        this.getNewCoordinates()
-        return super.chooseCell(character);
-    }
-
+  
     
 
     move() {

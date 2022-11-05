@@ -1,6 +1,6 @@
 var socket = io()
 
-var weath = "winter"
+
 var side = 10
 function setup() {
     createCanvas(60 * side, 60 * side );

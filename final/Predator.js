@@ -1,21 +1,14 @@
 let LivingCreature = require('./LivingCreature')
 
 
-module.exports=class Predator extends LivingCreature {
+module.exports=class predator extends LivingCreature {
     constructor(x, y) {
        super(x,y)
-        this.energy = 15;
+        this.energy = 25;
         this.directions = [];
  
     }
-    getNewCoordinates() {
-        
-    }
- 
-    chooseCell(character) {
-        this.getNewCoordinates()
-        return super.chooseCell(character);
-    }
+
  
     mul() {
         let emptyCelss = this.chooseCell(0)
@@ -24,9 +17,26 @@ module.exports=class Predator extends LivingCreature {
             let newX = newCell[0]
             let newY = newCell[1]
             matrix[newY][newX] = 3
-            let newGr = new Predator(newX, newY)
+            let newGr = new predator(newX, newY)
             PredatorArr.push(newGr)
             this.energy = 25
+        }
+        if (weath == "winter") {
+            this.energy -= 2
+            this.multiply -= 2
+
+        }
+        if (weath == "spring") {
+            this.energy +=3
+            this.multiply += 3
+        }
+        if (weath == "summer") {
+            this.energy += 5
+            this.multiply += 5
+        }
+        if (weath == "autaumn") {
+            this.energy--
+            this.multiply--
         }
     }
  
