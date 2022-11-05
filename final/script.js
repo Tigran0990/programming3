@@ -1,6 +1,6 @@
 var socket = io()
 
-
+var weath = "winter"
 var side = 10
 function setup() {
     createCanvas(60 * side, 60 * side );
@@ -14,7 +14,7 @@ function setup() {
 function nkarel(matrix) {
 for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
-
+   obj = matrix[y][x]
             if (obj == 1){
                 if(weath == "summer") {
                 fill("green");
